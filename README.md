@@ -9,4 +9,4 @@ four scripts for four games.
 `if (1)` disassemble from `sources/` into `disasm/{game}`  
 `if (0)` assemble from `disasm/{game}` into `/tmp/script.iga`
 
-all text in `disasm` of this repository has been replaced with `AAAAA`s
+all text in `disasm` of this repository has been replaced with `AAAAA`s, while keeping all filenames
