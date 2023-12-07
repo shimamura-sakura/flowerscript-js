@@ -94,7 +94,7 @@ const filelist = [
 if (1) {
     filelist.forEach(name => {
         const bytes = fs.readFileSync(`sources/4_hiver/${name}`);
-        const disasm = flowerscript.disassemble(bytes, cp932, true);
+        const disasm = flowerscript.disassemble(bytes, cp932, false);
         const reasm = flowerscript.assemble(JSON.parse(disasm), cp932);
         console.assert(bytes.compare(reasm) == 0);
         fs.writeFileSync(`disasm/4_hiver/${name}.json`, disasm);
