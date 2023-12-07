@@ -97,7 +97,7 @@ const filelist = [
     'start.s',
 ];
 
-if (0) {
+if (1) {
     filelist.forEach(name => {
         const bytes = fs.readFileSync(`sources/1_printemps/${name}`);
         const disasm = flowerscript.disassemble(bytes, cp932, false);
