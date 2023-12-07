@@ -1,0 +1,7 @@
+[
+    {"varSet":{"idx":100,"val":128}},
+    {"varSet":{"idx":101,"val":0}},
+    {"varSet":{"idx":102,"val":0}},
+    {"jumpScript":{"filename":"01a_00001.s"}},
+    {"exit":{}}
+]

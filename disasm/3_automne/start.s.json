@@ -1,0 +1,21 @@
+[
+    {"dialogVisible":{"visible":0}},
+    {"varSet":{"idx":100,"val":0}},
+    {"varSet":{"idx":101,"val":0}},
+    {"varSet":{"idx":102,"val":0}},
+    {"varSet":{"idx":108,"val":128}},
+    {"jumpCleared":{"idx":9,"label":"label_0x34"}},
+    {"jump":{"label":"label_0x6a"}},
+"label_0x34",
+    {"selBeg":{}},
+    {"selAdd":{"text":"AAAAAA","label":"label_0x6a"}},
+    {"selAdd":{"text":"AAAAAAAAA","label":"label_0x7d"}},
+    {"selEnd":{"idx":100}},
+"label_0x6a",
+    {"jumpScript":{"filename":"03a_00001.s"}},
+    {"exit":{}},
+"label_0x7d",
+    {"jumpScript":{"filename":"03a_01000.s"}},
+    {"exit":{}},
+    {"exit":{}}
+]

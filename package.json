@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "iconv-cp932": "^1.2.2"
+  }
+}
