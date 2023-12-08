@@ -10,3 +10,5 @@ four scripts for four games.
 `if (0)` assemble from `disasm/{game}` into `/tmp/script.iga`
 
 all text in `disasm` of this repository has been replaced with `AAAAA`s, while keeping all filenames
+
+note that instruction names in `disasm` are not up to date with `flowerscript.js`
