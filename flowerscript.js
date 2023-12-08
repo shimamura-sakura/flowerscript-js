@@ -55,13 +55,12 @@ const inst_descriptions = {
     }),
     0x51: i => i('effectStop', 3, {}),
     0x54: i => i('waitClick', 2, { mode: i.ui(2) }),
-    // 0x57 hiver: 1, 2 - set main background (plays a scene first time)
     0x57: i => i('markTrueEnd', 2, { kind: i.ui(2) }),
     0x5d: i => i('startInvestigate', 2, { idx: i.ui(2) }),
-    0x5e: i => i('0x5e_before_0x5f', 2, {}),
-    0x5f: i => i('jumpInvstgDone', 6, { idx: i.ui(2), label: i.label() }),
-    0x60: i => i('jumpInvstgClick', 82, { _: i.skip(2), labels: i.lblArr(20) }),
-    0x61: i => i('markInvstgDone', 2, { idx: i.ui(2) }),
+    0x5e: i => i('zeroInvItemTimes', 2, { _: i.zero(2) }),
+    0x5f: i => i('jumpInvItemTimesEq', 6, { idx: i.ui(1), cnt: i.ui(1), label: i.label() }),
+    0x60: i => i('jumpInvClickedPos', 82, { _: i.skip(2), labels: i.lblArr(20) }),
+    0x61: i => i('setInvItemTimes', 2, { idx: i.ui(1), cnt: i.ui(1) }),
     0x72: i => i('animOptA', 18, {
         layer: i.zero(1).ui(1),
         xMid: i.si(2),
