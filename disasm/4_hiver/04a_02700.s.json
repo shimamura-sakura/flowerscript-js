@@ -1277,7 +1277,7 @@
     {"dialog":{"text":"AAAAAAAAAAAAAAAAAAAA"},"__afterString":[0,60,130,179]},
     {"varSet":{"idx":103,"val":0}},
     {"varSet":{"idx":104,"val":0}},
-    {"0x5e":{},"__skipped":[[0,0]]},
-    {"0x5d":{},"__skipped":[[1,0]]},
+    {"zeroInvItemTimes":{}},
+    {"startInvestigate":{"idx":1}},
     {"exit":{}}
 ]
