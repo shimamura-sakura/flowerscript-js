@@ -1788,7 +1788,7 @@
     {"dialogVisible":{"visible":1}},
     {"dialogIdx":{"idx":10864}},
     {"dialog":{"text":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"__afterString":[0,0]},
-    {"volumeAnim_bd":{"volume":30,"duration":2000}},
+    {"seVolAnimDec":{"volume":30,"duration":2000}},
     {"fgClear":{}},
     {"fg_12":{"layer":1,"filename":"sner1617b.png"}},
     {"fgMetrics":{"layer":1,"scale":100,"xMid":640,"yTop":0}},

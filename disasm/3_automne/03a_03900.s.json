@@ -144,7 +144,7 @@
     {"waitTime":{"duration":2000}},
     {"sePlay":{"idx":1,"loop":0,"name":"yuz1307"}},
     {"waitTime":{"duration":2000}},
-    {"volumeAnim_bd":{"volume":50,"duration":1000}},
+    {"seVolAnimDec":{"volume":50,"duration":1000}},
     {"dialogVisible":{"visible":1}},
     {"dialogIdx":{"idx":8960}},
     {"dialog":{"text":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"__afterString":[0,193,130,189]},

@@ -106,7 +106,7 @@
     {"bgmStop":{}},
     {"seFadeIn":{"idx":1,"loop":1,"duration":2000,"name":"se142a"},"__skipped":[[0,0,0]]},
     {"waitTime":{"duration":1000}},
-    {"volumeAnim_bd":{"volume":30,"duration":1}},
+    {"seVolAnimDec":{"volume":30,"duration":1}},
     {"waitTime":{"duration":1000}},
     {"bg_0f":{"layer":1,"filename":"ev19a.bmp"}},
     {"crossfade":{"duration":1000}},
