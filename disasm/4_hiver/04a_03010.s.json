@@ -214,7 +214,7 @@
     {"dialog":{"text":"AAAAA"},"__afterString":[0,0]},
     {"fgClear":{}},
     {"crossfade":{"duration":500}},
-    {"animEnd_c0":{"n":1,"layers":[1,2,2,0,0,0,0,0,0,0,0,0,0]}},
+    {"animEndMulti":{"n":1,"layers":[1,2,2,0,0,0,0,0,0,0,0,0,0]}},
     {"dialogIdx":{"idx":2033}},
     {"dialog":{"text":"AAAAAAAAAAAAAAAAA"},"__afterString":[0,239]},
     {"dialogVisible":{"visible":0}},

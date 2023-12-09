@@ -476,7 +476,7 @@
     {"dialogIdx":{"idx":7983}},
     {"voPlay":{"name":"rik0082"}},
     {"dialog":{"text":"AAAAAAAAA"},"__afterString":[0,189]},
-    {"animEnd_c0":{"n":2,"layers":[1,2,3,3,0,0,0,0,0,0,0,0,0]}},
+    {"animEndMulti":{"n":2,"layers":[1,2,3,3,0,0,0,0,0,0,0,0,0]}},
     {"fgClear":{}},
     {"crossfade":{"duration":500}},
     {"dialogIdx":{"idx":7984}},

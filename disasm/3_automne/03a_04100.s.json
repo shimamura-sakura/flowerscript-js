@@ -259,7 +259,7 @@
     {"dialogIdx":{"idx":9372}},
     {"voPlay":{"name":"yuz1406"}},
     {"dialog":{"text":"AAAAA"},"__afterString":[0,0]},
-    {"animEnd_c0":{"n":2,"layers":[1,2,3,3,0,0,0,0,0,0,0,0,0]}},
+    {"animEndMulti":{"n":2,"layers":[1,2,3,3,0,0,0,0,0,0,0,0,0]}},
     {"fgClear":{}},
     {"fg_12":{"layer":2,"filename":"ueri1109.png"}},
     {"fgMetrics":{"layer":2,"scale":100,"xMid":640,"yTop":0}},

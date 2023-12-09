@@ -12,7 +12,7 @@
     {"animOptB":{"layer":1,"mode":1,"xMid":640,"yTop":0,"xScale":100,"yScale":100,"alpha":255,"duration":1000}},
     {"animRunAll":{}},
     {"waitTime":{"duration":1000}},
-    {"animEnd_75":{"layer":1}},
+    {"animEndSingle":{"layer":1}},
     {"waitTime":{"duration":5000}},
     {"dialogLog":{"text":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},"__afterString":[0,0,0,0]},
     {"bgColor":{"bgr":[0,0,0]}},

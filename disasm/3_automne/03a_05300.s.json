@@ -734,7 +734,7 @@
     {"dialog":{"text":"AAAAAA"},"__afterString":[0,226,168,0]},
     {"dialogIdx":{"idx":11662}},
     {"dialog":{"text":"AAAAAAAAAAAAAAAAAAAAA"},"__afterString":[0,65]},
-    {"animEnd_c0":{"n":2,"layers":[1,2,2,3,0,0,0,0,0,0,0,0,0]}},
+    {"animEndMulti":{"n":2,"layers":[1,2,2,3,0,0,0,0,0,0,0,0,0]}},
     {"fgClear":{}},
     {"crossfade":{"duration":500}},
     {"dialogVisible":{"visible":0}},

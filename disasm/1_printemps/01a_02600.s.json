@@ -1063,7 +1063,7 @@
     {"dialogIdx":{"idx":5890}},
     {"voPlay":{"name":"suo0768"}},
     {"dialog":{"text":"AAAAAAAAAAAAAAAAAA"},"__afterString":[0,104,129,118]},
-    {"0x36":{},"__skipped":[[0,1]]},
+    {"0x36":{}},
     {"fgClear":{}},
     {"crossfade":{"duration":500}},
     {"dialogIdx":{"idx":5891}},

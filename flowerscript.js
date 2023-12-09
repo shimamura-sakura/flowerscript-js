@@ -21,7 +21,7 @@ const inst_descriptions = {
     0x0f: i => i('bg_0f', 2, { layer: i.ui(1), filename: i.str(1) }), // BG: not  bg*.bmp
     0x10: i => i('bg_10', 2, { layer: i.ui(1), filename: i.str(1) }), // BG: only bg*.bmp
     0x11: i => i('fgClear', 6, { _: i.zero(6) }),
-    0x12: i => i('fg_12', 2, { layer: i.ui(1), filename: i.str(1) }),
+    0x12: i => i('fg_12', 2, { layer: i.ui(1), filename: i.str(1) }), // load for fade
     0x13: i => i('fgMetrics', 6, { layer: i.ui(1), scale: i.ui(1), xMid: i.si(2), yTop: i.si(2) }),
     0x14: i => i('crossfade', 6, { duration: i.zero(2).ui(4) }),
     0x16: i => i('bgColor', 6, { bgr: i.expect(1, 0).uiArr(1, 3), _: i.zero(1) }),
@@ -41,7 +41,7 @@ const inst_descriptions = {
     0x2c: i => i('seFadeOut', 6, { idx: i.ui(1), duration: i.skip(1).ui(4) }),
     0x2d: i => i('seFadeIn', 10, { idx: i.ui(1), loop: i.ui(1), duration: i.ui(4), name: i.str(1) }),
     0x35: i => i('yuri', 2, { action: i.zero(1).ui(1) }),
-    0x36: i => i('0x36', 2, {}),
+    0x36: i => i('0x36', 2, { _: i.expect(0, 1) }),
     0x3a: i => i('markGoodEnd', 2, { kind: i.ui(2) }),
     0x3b: i => i('jumpCleared', 6, { idx: i.ui(2), label: i.label() }),
     0x3f: i => i('dialogLog', 2, { text: i.zero(1).text(1) }),
@@ -83,22 +83,27 @@ const inst_descriptions = {
         _: i.zero(2),
     }),
     0x74: i => i('animRunAll', 2, { _: i.zero(2) }),
-    0x75: i => i('animEnd_75', 2, { layer: i.ui(1), _: i.zero(1) }),
-    0x83: i => i('0x83', 6, { ub: i.zero(1).ui(1), ui: i.ui(4) }),
+    0x75: i => i('animEndSingle', 2, { layer: i.ui(1), _: i.zero(1) }),
+    // unskippable flash effect
+    // color - 0: white, 1: red, 2: blue, 3: green, no more.
+    // times - equal, no repeats, but will flash at least 1 time
+    // duration - of a single flash
+    0x83: i => i('flash', 6, { color: i.ui(1), times: i.ui(1), duration: i.ui(4) }),
     0x8b: i => i('investigateRet', 2, { _: i.zero(2) }),
-    0x9c: i => i('fg_9c', 2, { layer: i.ui(1), filename: i.str(1) }),
+    0x9c: i => i('fg_9c', 2, { layer: i.ui(1), filename: i.str(1) }), // load for animation
     0xb2: i => i('video', 6, { kind: i.zero(2).ui(1), _: i.zero(3) }),
     0xb3: i => i('credits', 2, { kind: i.zero(1).ui(1) }),
     0xb4: i => i('avatar', 2, { filename: i.skip(1).str(1) }),
     0xb6: i => i('dialogMode', 2, { mode: i.ui(2) }),
     0xb8: i => i('markChapter', 2, { chapter: i.zero(1).ui(1) }),
     0xba: i => i('0xba', 2, {}),
-    0xbb: i => i('bgmVolAnimDec', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // used to decrease BGM volume
-    0xbc: i => i('bgmVolAnimInc', 6, { volume: i.ui(1), duration: i.zero(1).ui(4) }), // used to increase BGM volume
-    0xbd: i => i('seVolAnimDec', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // used to decrease SE(idx>0) volume
-    0xbe: i => i('seVolAnimInc', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // used to increase SE(idx>0) volume
+    // 0xbb - 0xbe: gradually change volume, WITH direction (immediate change if already Gt/Lt).
+    0xbb: i => i('bgmVolAnimDec', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // BGM
+    0xbc: i => i('bgmVolAnimInc', 6, { volume: i.ui(1), duration: i.zero(1).ui(4) }), // BGM
+    0xbd: i => i('seVolAnimDec', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // SE(idx>0)
+    0xbe: i => i('seVolAnimInc', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // SE(idx>0)
     0xbf: i => i('animRun', 14, { n: i.ui(1), layers: i.uiArr(1, 13) }),
-    0xc0: i => i('animEnd_c0', 14, { n: i.ui(1), layers: i.uiArr(1, 13) }),
+    0xc0: i => i('animEndMulti', 14, { n: i.ui(1), layers: i.uiArr(1, 13) }),
 };
 
 // https://stackoverflow.com/questions/36871299/how-to-extend-function-with-es6-classes

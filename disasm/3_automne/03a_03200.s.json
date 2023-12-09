@@ -772,7 +772,7 @@
     {"dialogIdx":{"idx":8163}},
     {"voPlay":{"name":"suo0111"}},
     {"dialog":{"text":"AAAAAAAAA"},"__afterString":[0,170]},
-    {"animEnd_c0":{"n":2,"layers":[1,2,3,3,0,0,0,0,0,0,0,0,0]}},
+    {"animEndMulti":{"n":2,"layers":[1,2,3,3,0,0,0,0,0,0,0,0,0]}},
     {"fgMetrics":{"layer":0,"scale":100,"xMid":640,"yTop":0}},
     {"fgMetrics":{"layer":1,"scale":100,"xMid":640,"yTop":0}},
     {"avatar":{"filename":"fyuz0703.png"},"__skipped":[[0]]},

@@ -890,7 +890,7 @@
     {"animRunAll":{}},
     {"voPlay":{"name":"rin0228"}},
     {"waitTime":{"duration":1000}},
-    {"animEnd_75":{"layer":1}},
+    {"animEndSingle":{"layer":1}},
     {"waitTime":{"duration":5000}},
     {"dialogLog":{"text":"AAAAAAAAAAAAAAAAAA"},"__afterString":[0,170,130,232]},
     {"voStop":{},"__skipped":[[1,0]]},

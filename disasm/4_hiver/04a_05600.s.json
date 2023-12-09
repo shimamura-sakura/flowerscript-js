@@ -240,7 +240,7 @@
     {"animOptB":{"layer":1,"mode":4,"xMid":640,"yTop":-16,"xScale":100,"yScale":100,"alpha":255,"duration":200}},
     {"animRun":{"n":1,"layers":[1,1,0,0,0,0,0,0,0,0,0,0,0]}},
     {"waitTime":{"duration":500}},
-    {"animEnd_c0":{"n":1,"layers":[1,1,0,0,0,0,0,0,0,0,0,0,0]}},
+    {"animEndMulti":{"n":1,"layers":[1,1,0,0,0,0,0,0,0,0,0,0,0]}},
     {"dialog":{"text":"＃AA"},"__afterString":[0,29,180,0]},
     {"dialogIdx":{"idx":6166}},
     {"voPlay":{"name":"ich0233"}},
