@@ -90,7 +90,7 @@ const inst_descriptions = {
     // duration - of a single flash
     0x83: i => i('flash', 6, { color: i.ui(1), times: i.ui(1), duration: i.ui(4) }),
     0x8b: i => i('investigateRet', 2, { _: i.zero(2) }),
-    0x9c: i => i('fg_9c', 2, { layer: i.ui(1), filename: i.str(1) }), // load for animation
+    0x9c: i => i('fg_9c', 2, { layer: i.ui(1), filename: i.str(1) }), // load and mark gallery
     0xb2: i => i('video', 6, { kind: i.zero(2).ui(1), _: i.zero(3) }),
     0xb3: i => i('credits', 2, { kind: i.zero(1).ui(1) }),
     0xb4: i => i('avatar', 2, { filename: i.skip(1).str(1) }),
