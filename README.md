@@ -11,7 +11,7 @@ four scripts for four games.
 
 all text in `disasm` of this repository has been replaced with `AAAAA`s, while keeping all filenames
 
-note that instruction names in `disasm` are not up to date with `flowerscript.js`
+note that instruction names in `disasm` may not up to date with `flowerscript.js`
 
 ## About Chinese version of FLOWERS
 

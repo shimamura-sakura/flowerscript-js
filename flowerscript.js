@@ -41,7 +41,7 @@ const inst_descriptions = {
     0x2c: i => i('seFadeOut', 6, { idx: i.ui(1), duration: i.skip(1).ui(4) }),
     0x2d: i => i('seFadeIn', 10, { idx: i.ui(1), loop: i.ui(1), duration: i.ui(4), name: i.str(1) }),
     0x35: i => i('yuri', 2, { action: i.zero(1).ui(1) }),
-    0x36: i => i('0x36', 2, { _: i.expect(0, 1) }),
+    0x36: i => i('op_0x36', 2, { _: i.expect(0, 1) }),
     0x3a: i => i('markGoodEnd', 2, { kind: i.ui(2) }),
     0x3b: i => i('jumpCleared', 6, { idx: i.ui(2), label: i.label() }),
     0x3f: i => i('dialogLog', 2, { text: i.zero(1).text(1) }),
@@ -96,7 +96,7 @@ const inst_descriptions = {
     0xb4: i => i('avatar', 2, { filename: i.skip(1).str(1) }),
     0xb6: i => i('dialogMode', 2, { mode: i.ui(2) }),
     0xb8: i => i('markChapter', 2, { chapter: i.zero(1).ui(1) }),
-    0xba: i => i('0xba', 2, {}),
+    0xba: i => i('op_0xba', 2, {}),
     // 0xbb - 0xbe: gradually change volume, WITH direction (immediate change if already Gt/Lt).
     0xbb: i => i('bgmVolAnimDec', 6, { volume: i.zero(1).ui(1), duration: i.ui(4) }), // BGM
     0xbc: i => i('bgmVolAnimInc', 6, { volume: i.ui(1), duration: i.zero(1).ui(4) }), // BGM
@@ -265,7 +265,7 @@ for (const opcode in inst_descriptions) {
     inst_assemblers[opname] = inst_descriptions[opcode](new InstAsm(parseInt(opcode)));
 }
 
-function disassemble(buffer, textDecoder, noText) {
+function disassembleObj(buffer, textDecoder, noText) {
     buffer = Uint8Array.from(buffer);
     let offset = 0;
     const lblSet = {};
@@ -295,9 +295,14 @@ function disassemble(buffer, textDecoder, noText) {
     const outLines = [];
     for (const [offset, instObj] of instList) {
         if (lblSet[offset])
-            outLines.push(JSON.stringify(`label_0x${offset.toString(16)}`));
-        outLines.push('    ' + JSON.stringify(instObj));
+            outLines.push(`label_0x${offset.toString(16)}`);
+        outLines.push(instObj);
     }
+    return outLines;
+}
+
+function disassemble(buffer, textDecoder, noText) {
+    const outLines = disassembleObj(buffer, textDecoder, noText).map(o => JSON.stringify(o));
     return `[\n${outLines.join(',\n')}\n]`;
 }
 
