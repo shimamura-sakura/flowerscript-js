@@ -336,4 +336,4 @@ const FlowerScript = (function () {
     return { disassembleObj, disassemble, assemble };
 })();
 
-if (module) module.exports = FlowerScript;
+if ('module' in globalThis) module.exports = FlowerScript;

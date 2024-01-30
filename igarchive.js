@@ -97,4 +97,4 @@ const IGArchive = (function () {
     return { igaCreate, igaLoad };
 })();
 
-if (module) module.exports = IGArchive;
+if ('module' in globalThis) module.exports = IGArchive;
