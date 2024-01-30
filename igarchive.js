@@ -1,7 +1,7 @@
 'use strict';
 
 const IGArchive = (function () {
-    const MAGIC = [73, 71, 65, 48, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0];
+    const MAGIC = [73, 71, 65, 48, -1, -1, -1, -1, 2, 0, 0, 0, 2, 0, 0, 0];
     function igEncode(buffer, value) {
         if (value < 0) throw new Error('negative value');
         const result = [];
@@ -71,7 +71,7 @@ const IGArchive = (function () {
     };
     function igaLoad(inData, nameDecoder) {
         const reader = new ArrayReader(inData);
-        for (const b of MAGIC) if (b != reader.byte()) throw new Error('invalid magic');
+        for (const b of MAGIC) if (b != reader.byte() && b >= 0) throw new Error('invalid magic');
         const desc_reader = new ArrayReader(reader.take(reader.vlq()));
         const name_reader = new ArrayReader(reader.take(reader.vlq()));
         const file_datass = reader.array.subarray(reader.index);
@@ -87,7 +87,7 @@ const IGArchive = (function () {
         const ret = {};
         for (let i = 1; i < descs.length; i++) {
             const desc = descs[i - 1];
-            const name = nameDecoder.decode(nchrs.slice(desc.fnbeg, descs[i].fnbeg));
+            const name = nameDecoder.decode(new Uint8Array(nchrs.slice(desc.fnbeg, descs[i].fnbeg)));
             const data = file_datass.subarray(desc.dataoff, desc.dataoff + desc.datalen);
             const vxor = name.endsWith('.s') ? 0xFF : 0x00;
             ret[name] = data.map((b, i) => b ^ (i + 2) ^ vxor);
@@ -97,4 +97,4 @@ const IGArchive = (function () {
     return { igaCreate, igaLoad };
 })();
 
-if ('module' in globalThis) module.exports = IGArchive;
+if (typeof module !== 'undefined') module.exports = IGArchive;
