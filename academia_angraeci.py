@@ -1,7 +1,7 @@
 import hashlib
 
 """
-The Chinese translation group 'Academia Sancti Angraeci' (圣彗星兰学院) have
+The Chinese translation group '圣彗星兰学院' have
 their script files and filenames encrypted. Texts are encoded with GBK.
 
 Here are the encryption method they used:
